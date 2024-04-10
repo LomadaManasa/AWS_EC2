@@ -8,7 +8,7 @@ terraform {
  backend "s3" {
     bucket = "statefileusingjenkins"
     key    = "global/s3/terraform.tfstate"
-    region = "us-east-2"
+    region = "ap-notheast-1"
     encrypt=true
   }
 }
