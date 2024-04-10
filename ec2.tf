@@ -14,14 +14,14 @@ resource "aws_key_pair" "terraform_privateEc2key_pair" {
     key_name = "terraform_private_ec2_key_pair"
     public_key = tls_private_key.rsa1.public_key_openssh
 }
-resource "local_file" "terraform_publicEc2keypair_save" {
+/*resource "local_file" "terraform_publicEc2keypair_save" {
   content = tls_private_key.rsa.private_key_pem
   filename = "terraform_public_ec2_private_key.pem"
 }
 resource "local_file" "terraform_privateEc2keypair_save" {
   content = tls_private_key.rsa1.private_key_pem
   filename = "terraform_private_ec2_private_key.pem"
-}
+}*/
 resource "aws_instance" "terraform_public_ec2" {
     tags={
         Name="terraform_public_ec2"
